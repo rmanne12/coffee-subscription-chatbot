@@ -12,7 +12,6 @@ VALID_REASONS = [
     "moving"
 ]
 
-# Enhanced reason prompt with detailed guidance
 reason_prompt = PromptTemplate(
     input_variables=["conversation", "valid_reasons"],
     template="""
@@ -98,5 +97,4 @@ def parse_reason_output(reason_json: str) -> str:
             return None
         return reason
     except json.JSONDecodeError:
-        # Return None if the parsing fails
         return None

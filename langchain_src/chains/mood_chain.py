@@ -3,7 +3,6 @@ from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 from langchain_src.config.llm_config import get_llm
 
-# Enhanced prompt with urgency definitions and additional clarity
 mood_prompt = PromptTemplate(
     input_variables=["conversation"],
     template="""
@@ -104,5 +103,4 @@ def parse_mood_output(mood_json: str) -> dict:
             "urgency": data.get("urgency", "low")
         }
     except json.JSONDecodeError:
-        # Fallback values for parsing errors
         return {"mood": "neutral", "urgency": "low"}

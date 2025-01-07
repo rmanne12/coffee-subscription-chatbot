@@ -22,28 +22,23 @@ def main():
                 print("Bot: Understood. Live long and prosper!")
                 break
 
-            # Add user input to conversation history
             conversation_history.append(f"User: {user_input}")
 
             try:
-                # Prepare inputs for the chain
                 inputs = {"conversation": "\n".join(conversation_history), "stage": stage}
                 if stage == "offer":
                     inputs.update({"reason": reason, "mood": mood, "urgency": urgency})
                 elif stage == "confirmation":
                     inputs.update({"offer": active_offer})
 
-                # Run the chain
                 outputs = chain.run(inputs)
-                # print(f"DEBUG: Outputs = {outputs}, Type = {type(outputs)}")  # Debugging
+                # print(f"DEBUG: Outputs = {outputs}, Type = {type(outputs)}")
 
-                # Ensure outputs is a dictionary and has 'final_response'
                 if not isinstance(outputs, dict) or "final_response" not in outputs:
                     raise KeyError(f"Missing expected output keys: {outputs}")
 
                 bot_response = outputs["final_response"]
 
-                # Handle conversation flow based on stage
                 if stage == "initial":
                     mood = outputs.get("mood", "neutral")
                     urgency = outputs.get("urgency", "low")
@@ -53,7 +48,7 @@ def main():
                     active_offer = outputs.get("offer")
                     stage = "confirmation"
                 elif stage == "confirmation":
-                    stage = "complete"  # Conversation flow ends here
+                    stage = "complete"  
 
                 print(f"Bot: {bot_response}")
                 conversation_history.append(f"Bot: {bot_response}")

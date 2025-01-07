@@ -31,29 +31,26 @@ class UserFlowChain(Chain):
 
     def _call(self, inputs: Dict[str, Any]) -> Dict[str, Any]:
         conversation_text = inputs[self.conversation_key]
-        stage = inputs.get("stage", "initial")  # Default to initial stage
+        stage = inputs.get("stage", "initial")  
 
         try:
             if stage == "initial":
-                # Step 1: Mood Detection
                 mood_chain = build_mood_chain()
                 mood_json = mood_chain.run({"conversation": conversation_text})
-                # print(f"DEBUG: Mood Chain Output = {mood_json}")  # Debugging
+                # print(f"DEBUG: Mood Chain Output = {mood_json}")
                 mood_data = parse_mood_output(mood_json)
-                # print(f"DEBUG: Parsed Mood Data = {mood_data}")  # Debugging
+                # print(f"DEBUG: Parsed Mood Data = {mood_data}")
                 mood = mood_data.get("mood", "neutral")
                 urgency = mood_data.get("urgency", "low")
 
-                # Step 2: Reason Detection
                 reason_chain = build_reason_chain()
                 reason_json = reason_chain.run({
                     "conversation": conversation_text,
                     "valid_reasons": ", ".join(VALID_REASONS)
                 })
-                # print(f"DEBUG: Reason Chain Output = {reason_json}")  # Debugging
+                # print(f"DEBUG: Reason Chain Output = {reason_json}")
                 reason_value = parse_reason_output(reason_json) or "unknown"
 
-                # Return combined mood and reason for further processing
                 return {
                     "mood": mood,
                     "urgency": urgency,
@@ -65,7 +62,6 @@ class UserFlowChain(Chain):
                 }
 
             elif stage == "offer":
-                # Step 3: Offer Proposal
                 offer_chain = build_offer_chain()
                 offer_json = offer_chain.run({
                     "reason": inputs["reason"],
@@ -80,7 +76,6 @@ class UserFlowChain(Chain):
                 return {"offer": offer_data, "final_response": offer_data["offer_text"]}
 
             elif stage == "confirmation":
-                # Step 4: Confirmation
                 decision_chain = build_decision_chain()
                 decision_json = decision_chain.run({
                     "conversation": conversation_text,
