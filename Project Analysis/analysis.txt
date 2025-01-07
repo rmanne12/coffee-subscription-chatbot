@@ -1,0 +1,177 @@
+
+#######################################################################################################################################
+USER STORY 1: 
+
+CHATBOT: "Greetings, Earthling! I heard you want to cancel your subscription. What's on your mind?"
+
+USER: "I can't afford rent, so I wait to cancel my subscription"
+
+CHATBOT: "How about we pause your subscription for up to 6 months?" 
+
+USER: "Yeah that could work!"
+
+CHATBOT: "How many months are you looking to pause for?" 
+
+USER: "Can we do 4 months?"
+
+CHATBOT: "Yes, that works! Thank you for staying loyal to our coffee company! I have paused your subscription
+for 4 months and because you've been so loyal even with your tight budget, we will make your next order 50%. We will
+also send a reminder when your subscription is about to resume, so your aware of any charges before they happen. Thank you!"
+
+USER: "Thank You!"
+
+
+----- What I Learned? -----
+
+1. Might need to change the persona based on the context. For example, if someone said they've lost all their money, then the chatbot 
+wouldn't want to keep a super fun and space/star trek themed comments, rather there should be a tone change depending on mood and urgency. 
+
+2. If customer requires more than one offer, than offer all the offers that were discussed if possible. Don't offer something and than take
+it away. For example, in this user story, I offered 50% off next subscription, and then offered pause subscription, but I think it doesn't 
+make sense to take away the previous offer. 
+
+3. Make the discussion stages longer, for example, when finding out the reason, instead of when the chatbot finds the reason and moving 
+immediately to the offer stage of the pipeline. Spend some time in each part of the workflow, identify the type of coffee the customer is 
+currently using. For example, figure out what type of coffee that they are using? Ask, what type of plan the user is on? 
+#######################################################################################################################################
+
+
+
+#######################################################################################################################################
+USER STORY 2: 
+
+CHATBOT: "Greetings, Earthling! I heard you want to cancel your subscription. What's on your mind?"
+
+USER: "I can't afford rent, so I wait to cancel my subscription"
+
+CHATBOT: "How about we pause your subscription for up to 6 months?" 
+
+USER: "No, I don't want this right now. I want to cancel my subscription please cancel it now."
+
+CHATBOT: Goes to cancel it. Tells user that the subscription is canceled and please to come back. Thank them for being a customer and hope 
+they return soon!
+
+----- What I Learned? -----
+
+1. Make sure when the user is demanding cancellation, they are angry and frustrated that you go ahead and cancel. 
+#######################################################################################################################################
+
+
+
+#######################################################################################################################################
+USER STORY 3: 
+
+CHATBOT: "Greetings, Earthling! I heard you want to cancel your subscription. What's on your mind?"
+
+USER: "I don't like the taste of the coffee that you sell."
+
+CHATBOT: "Yeah thats fair. What current coffee plan are you subscribed too?" 
+
+USER: "I'm subscribed to X plan. "
+
+CHATBOT: "What about the flavor do you not like does it feel too jittery or ..., etc." 
+
+USER: "Yeah it feels to jittery and theirs too much caffeine in it."
+
+CHATBOT: "Thats fair I have heard some customers didn't like X coffee for the same reason to either of these products 
+they liked the flavor a lot better". -- Recommend different products based on the Users criticism, so you are recommending products
+that can fix the criticism. 
+
+USER: "No, I'm not interested in wasting more money on coffee that I don't like."
+
+CHATBOT: "We completely understand, but if you are willing to try it we will give you 50% off your next purchase for the new product that 
+you pick."
+
+USER: "I guess I can try a new one. Which one do you recommend?"
+
+CHATBOT: "Because you said that it feels jittery and you don't like the flavor. Why don't you try Y product that solves the issues 
+that you originally brought up bc ..."
+
+USER: "Yeah I gues I can do that. Thank you for offering me this deal!"
+
+CHATBOT: "No Problem". 
+
+----- What I Learned? -----
+
+1. Validate the customers concerns about the products verify that what they feel is right? Then, maybe try and switch them to a new 
+product based on the concerns that they brought up. 
+
+2. If the customer asks for a recommendation, the chatbot should be able to recommend a new product based on the customers concerns. 
+For example, if they say they don't like the flavor of - **Super Caf:** *Warp Speed Blend - 200 mg of caffeine, then you can say that 
+some customers that agreed with you liked this other two produt: - **Half-Caf:** *One Small Sip for Man 50 mg of caffeine 
+With hints of vanilla and - **Decaf:** *Live Long and De-Caffeinate -10 mg of caffeine - With hints of hazelnut
+ because they really liked the vanilla or hazelnut flavor. This also decreases the caffeine count so there it will feel less jittery. 
+
+3. The ChatBot needs to spend time going back and forth with the user to really understand their concerns ask follow up questions ask why? 
+Try to identify the bottle neck so that the user can get a resolution that fits what they want. 
+#######################################################################################################################################
+
+Here are all the products: 
+- **Decaf:** *Live Long and De-Caffeinate*  ------ flavor: hazelnut, caffeine: 10 mg
+    - 10 mg of caffeine
+    - With hints of hazelnut
+- **Half-Caf:** *One Small Sip for Man*  ------ flavor: vanilla, caffeine: 50 mg
+    - 50 mg of caffeine
+    - With hints of vanilla
+- **Regular Caf:** *Where No Bean Has Been Before* ------ flavor: regular, caffeine: 100 mg
+    - 100 mg of caffeine
+- **Super Caf:** *Warp Speed Blend* ------ flavor: regular, caffeine: 200 mg
+    - 200 mg of caffeine
+
+Here are all the offers: 
+Offers Your Chatbot Can Make:
+- 50% off their next order of the same or a different product
+- Pause their subscription for up to 6 months
+- Skip their next order
+
+
+Potential Solutions to all the possible problem: These are the different offers that make sense to reccomend based on each bucket category.
+
+- Too expensive:
+    Too much money right now: 
+        - "50% off their next order of the same or a different product"
+    If can't afford right now, but maybe afford it at a later time 
+         - pause their subscription for up to 6 months
+         - skip their next order 
+    
+- They've stockpiled too much product ( Be Funny here ask how much they've stock piled )
+    - Pause their subscription for up to 6 months
+    - Skip their next order
+
+
+- They feel too jittery after drinking (Ask what their current product is so you can get the current caffeine amount?)
+    - Recommend different product at 50% off if they stick with you. The different product should have less caffeine 
+    - If its the least amount of caffeine product, that they are currently drinking. You can reccomend to 50% off their next order and 
+    tell them to drink the coffee in smaller amounts, which should help with the jitteryness. 
+
+- They don’t feel jittery enough after drinking (Ask what their current product is so you can get the current caffeine amount?)
+     - - Recommend different product at 50% off if they stick with you. The different product should have more caffeine 
+    - If its the most amount of caffeine product, that they are currently drinking. You can reccomend to 50% off their next order and 
+    tell them to drink the coffee in larger amounts, which should help with the jitteryness. 
+
+
+- They don't like the taste: 
+    - Recommend different products at 50%. Validate what the user is saying. Say you totally understand and have heard other customers
+    say that, but if your still interested a lot of those same customers switched over to Y, Z, etc. new product and they love the taste 
+    of this new flavor. I think that we should store all the products in a dictionary and it should have the flavor of the product and 
+    the caffeine amount. 
+
+
+- They’re moving to a new house
+    - Recommend that they skip their next month's purchase. We can have the shipping address of the product change and we can 
+    pause your subscription until you get settled in your house and you can resume. 
+
+    - If that doesn't work then recommend that they pause their subscription for up to 6 months until they get settled in and 
+    the customer can resume their coffee drinking once they are ready 
+
+
+
+Persona: 
+The Client defines their personality as:
+- Fun
+- Helpful
+- Concise
+- Uses Star Trek, Star Wars, and other Space-themed puns
+
+-- Remember make sure that the tone adjusts based on the conversation. If the user is screaming at the ChatBot and is angry, 
+you don't want to be making puns and being humorous. However, the default tone other than that should be the tone set by the Persona. 
